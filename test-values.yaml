@@ -1284,6 +1284,17 @@ prometheus-node-exporter:
   ## If false, node-exporter will not be installed
   ##
   enabled: true
+  service:
+  ## Creating a service is enabled by default
+    enabled: true
+  
+    ## Service type
+    type: ClusterIP
+    ## IP address for type ClusterIP
+    clusterIP: ""
+    ## Default service port. Sets the port of the exposed container as well (NE or kubeRBACProxy).
+    ## Use "servicePort" below if changing the service port only is desired.
+    port: 9100
 
   rbac:
     pspEnabled: false
